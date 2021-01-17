@@ -1,7 +1,5 @@
-# Disaster-Response-Pipeline
+# Disaster Response Pipeline
 Python file and files for a working web app.
-
-# Injured in Madrid due to traffic accidents during 2019
 
 ### by Iván Lucas López
 
@@ -15,8 +13,24 @@ Python file and files for a working web app.
 
 ## Installation <a name="installation"></a>
 
-There should be no necessary libraries to run the code here beyond the Anaconda distribution of Python.  
 The code should run with no issues using Python versions 3.*.
+
+1. pandas
+2. numpy
+3. sqlalchemy
+4. matplotlib
+5. plotly
+6. NLTK
+7. NLTK [punkt, wordnet, stopwords]
+8. sklearn
+9. joblib
+10. flask
+11. re
+12. sqlite3
+13. pickle
+14. sys
+15.string
+16.sqlalchemy
 
 ## Project Motivation<a name="motivation"></a>
 
