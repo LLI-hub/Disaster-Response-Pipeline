@@ -51,14 +51,25 @@ For this project, I was interestested in using El Ayuntamiento de Madrid data fr
 ## File Descriptions <a name="files"></a>
 
 There are 3 files available here to showcase work related to the above questions.  
-1. README.md
 
-2. 2019_Accidentalidad.csv
-  - Traffic accidents in the City of Madrid registered by the Municipal Police.
-  - One record is included per person involved in the accident.
-  - Witness records not included.
-  
-3. Traffic_accident_Madrid.py. This `.py` file runs the necessary code to obtain the answers to the avobe questions.
+1. data
+  In a Python script, process_data.py, there is a data cleaner pipeline that:
+  - Loads the messages and categories datasets
+  - Merges the two datasets
+  - Cleans the data
+  - Stores it in a SQLite database
+
+2. model
+  In a Python script, train_classifier.py, there is a machine learning pipeline that:
+  - Loads data from the SQLite database
+  - Splits the dataset into training and test sets
+  - Builds a text processing and machine learning pipeline
+  - Trains and tunes a model using GridSearchCV
+  - Outputs results on the test set
+  - Exports the final model as a pickle file
+
+3. app
+Flask web app.
 
 ## Results<a name="results"></a>
 
