@@ -55,7 +55,7 @@ There are 3 files available here to showcase work related to the above questions
   - Cleans the data
   - Stores it in a SQLite database
 
-**2. model**
+**2. models**
 
     In a Python script, train_classifier.py, there is a machine learning pipeline that:
   - Loads data from the SQLite database
