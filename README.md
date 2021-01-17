@@ -36,17 +36,7 @@ The code should run with no issues using Python versions 3.*.
 
 **Study on traffic accidents in Madrid**
 
-For this project, I was interestested in using El Ayuntamiento de Madrid data from 2019 about traffic accidents to better understand:
-
-1. How many traffic accident occurred in Madrid during 2019?, 
-  How many people are involved? and 
-  What is the average number of people involved in a traffic accident?
-  
-2. What day of the week are there the most accidents?
-
-3. What time do most accidents occur?
-
-4. At what age are more traffic accidents suffered?
+Analyze disaster data from [Figure Eight](https://appen.com/figure-eight-is-now-appen/) to build a model for an API that classifies disaster messages.
 
 ## File Descriptions <a name="files"></a>
 
