@@ -54,7 +54,7 @@ There are 3 files available here to showcase work related to the above questions
 
 1. data
 
-  In a Python script, process_data.py, there is a data cleaner pipeline that:
+    In a Python script, process_data.py, there is a data cleaner pipeline that:
   - Loads the messages and categories datasets
   - Merges the two datasets
   - Cleans the data
@@ -62,7 +62,7 @@ There are 3 files available here to showcase work related to the above questions
 
 2. model
 
-  In a Python script, train_classifier.py, there is a machine learning pipeline that:
+    In a Python script, train_classifier.py, there is a machine learning pipeline that:
   - Loads data from the SQLite database
   - Splits the dataset into training and test sets
   - Builds a text processing and machine learning pipeline
@@ -72,7 +72,7 @@ There are 3 files available here to showcase work related to the above questions
 
 3. app
 
-Flask web app.
+    Flask web app.
 
 ## Results<a name="results"></a>
 
@@ -91,6 +91,7 @@ Type: **env|grep WORK**
 You'll see output that looks something like this:
 
 SPACEDOMAIN: udacity-student-workspaces.com/
+
 SPACEID: viewa7a4999b
 
 In a new web browser window, type in the following:
