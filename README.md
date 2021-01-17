@@ -53,6 +53,7 @@ For this project, I was interestested in using El Ayuntamiento de Madrid data fr
 There are 3 files available here to showcase work related to the above questions.  
 
 1. data
+
   In a Python script, process_data.py, there is a data cleaner pipeline that:
   - Loads the messages and categories datasets
   - Merges the two datasets
@@ -60,6 +61,7 @@ There are 3 files available here to showcase work related to the above questions
   - Stores it in a SQLite database
 
 2. model
+
   In a Python script, train_classifier.py, there is a machine learning pipeline that:
   - Loads data from the SQLite database
   - Splits the dataset into training and test sets
@@ -69,6 +71,7 @@ There are 3 files available here to showcase work related to the above questions
   - Exports the final model as a pickle file
 
 3. app
+
 Flask web app.
 
 ## Results<a name="results"></a>
