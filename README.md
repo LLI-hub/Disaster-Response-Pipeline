@@ -78,6 +78,7 @@ Flask web app.
 
 The main findings of the code can be found at the post available [here](https://i-lucas.medium.com/traffic-accidents-are-as-different-as-day-and-night-51b52458646d).
 
+
 ## Licensing, Authors, Acknowledgements<a name="licensing"></a>
 
 Must give credit to El Ayuntamiento de Madrid for the data.  
