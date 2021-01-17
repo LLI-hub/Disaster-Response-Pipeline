@@ -38,6 +38,12 @@ The code should run with no issues using Python versions 3.*.
 
 Analyze disaster data from [Figure Eight](https://appen.com/figure-eight-is-now-appen/) to build a model for an API that classifies disaster messages.
 
+The data set contains real messages that were sent during disaster events. I have created a machine learning pipeline to categorize these events so that it can send the messages to an appropriate disaster relief agency.
+
+The project includes a web app where an emergency worker can input a new message and get classification results in several categories. 
+
+The web app also display visualizations of the data.
+
 ## File Descriptions <a name="files"></a>
 
 There are 3 files available here to showcase work related to the above questions.  
@@ -98,5 +104,4 @@ Make sure that the 3001 is part of the web address you type in.
 
 ## Licensing, Authors, Acknowledgements<a name="licensing"></a>
 
-Must give credit to El Ayuntamiento de Madrid for the data.  
-You can find the Licensing for the data and other descriptive information at the link available [here](https://datos.madrid.es/portal/site/egob/menuitem.c05c1f754a33a9fbe4b2e4b284f1a5a0/?vgnextoid=7c2843010d9c3610VgnVCM2000001f4a900aRCRD&vgnextchannel=374512b9ace9f310VgnVCM100000171f5a0aRCRD&vgnextfmt=default).
+Must give credit to [Udacity](https://www.udacity.com/) and [Figure Eight](https://appen.com/figure-eight-is-now-appen/) for the data.  
