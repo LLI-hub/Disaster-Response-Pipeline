@@ -33,7 +33,7 @@ The code should run with no issues using Python versions 3.*.
 
 ## Project Motivation<a name="motivation"></a>
 
-**Study on traffic accidents in Madrid**
+**Disaster Messages Classifier**
 
 Analyze disaster data from [Figure Eight](https://appen.com/figure-eight-is-now-appen/) to build a model for an API that classifies disaster messages.
 
@@ -47,7 +47,7 @@ The web app also display visualizations of the data.
 
 There are 3 files available here to showcase work related to the above questions.  
 
-1. data
+**1. data**
 
     In a Python script, process_data.py, there is a data cleaner pipeline that:
   - Loads the messages and categories datasets
@@ -55,7 +55,7 @@ There are 3 files available here to showcase work related to the above questions
   - Cleans the data
   - Stores it in a SQLite database
 
-2. model
+**2. model**
 
     In a Python script, train_classifier.py, there is a machine learning pipeline that:
   - Loads data from the SQLite database
@@ -65,7 +65,7 @@ There are 3 files available here to showcase work related to the above questions
   - Outputs results on the test set
   - Exports the final model as a pickle file
 
-3. app
+**3. app**
 
     Flask web app.
 
