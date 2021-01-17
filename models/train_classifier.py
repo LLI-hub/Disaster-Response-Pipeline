@@ -36,9 +36,6 @@ import os
 
 def load_data(database_filepath):
     #Load dataset from database with read_sql_table
-    #engine = create_engine('sqlite:///' + database_filepath)
-    #table_name = os.path.basename(database_filepath).replace(".db","")
-    #df = pd.read_sql_table(table_name,engine)
     engine = create_engine('sqlite:///{}'.format(database_filepath))
     df = pd.read_sql_table('df_clean', engine)
     df = df.drop(['original'], 1)
