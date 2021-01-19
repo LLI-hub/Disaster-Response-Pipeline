@@ -175,11 +175,7 @@ def evaluate_model(model, X_test, Y_test, category_names):
     Y_pred = model.predict(X_test)        
     print(classification_report(Y_test.values, Y_pred, target_names=category_names))
     
-    # Calculate the test for each category.
-    for i in range(len(category_names)):
-        print('Category: {} '.format(category_names[i]))
-        print(classification_report(Y_test.iloc[:, i].values, Y_pred[:, i]))
-        print('Accuracy {}\n\n'.format(accuracy_score(Y_test.iloc[:, i].values, Y_pred[:, i])))
+    
 
 
 def save_model(model, model_filepath):
