@@ -35,6 +35,20 @@ import pickle
 import os
 
 def load_data(database_filepath):
+    """
+    Summary line.
+    -Load dataset from database with read_sql_table
+    -Define feature and target variables X and Y
+    -List of the category names for classification
+    
+    Parameters:
+    -database_filepath
+    
+    Returns:
+    -X
+    -Y
+    -category_names
+    """
     #Load dataset from database with read_sql_table
     engine = create_engine('sqlite:///{}'.format(database_filepath))
     df = pd.read_sql_table('df_clean', engine)
@@ -56,6 +70,19 @@ def load_data(database_filepath):
 
 
 def tokenize(text, stopW = True):
+    """
+    Summary line.
+    -if there are an url puts: urlplaceholder
+    -erase punctuation simbols
+    -Remove stop words if wanted
+    
+    Parameters:
+    -text
+    -stopW
+    
+    Returns:
+    -clean_tokens
+    """
     
      #I want a unique word if there are an url
     url_regex = 'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
@@ -87,7 +114,18 @@ def tokenize(text, stopW = True):
 
 
 def build_model():
-    # Returns the GridSearchCV object to be used as the model
+    """
+    Summary line.
+    -Creates pipeline
+    -define parameters
+    -Returns the GridSearchCV object to be used as the model
+    
+    Parameters:
+    
+    Returns:
+    -GridSearchCV object to be used as the model
+    """
+    
     
     pipeline = Pipeline([('text_pipeline', Pipeline([
         ('vect', CountVectorizer(tokenizer=tokenize)),
@@ -112,11 +150,28 @@ def build_model():
         }
     ]
     
+    # Returns the GridSearchCV object to be used as the model
     cv = GridSearchCV(pipeline, param_grid=parameters, scoring=make_scorer(f1_score , average='weighted'),cv=3,n_jobs=-1)
     return cv
 
 
 def evaluate_model(model, X_test, Y_test, category_names):
+    """
+    Summary line.
+    Evaluates the model with using the test dataset
+    
+    Parameters:
+    -model
+    -X_test
+    -Y_test
+    -category_names
+    
+    Returns:
+    -precision
+    -recall
+    -f1-score
+    """
+    
     Y_pred = model.predict(X_test)        
     print(classification_report(Y_test.values, Y_pred, target_names=category_names))
     
@@ -128,11 +183,39 @@ def evaluate_model(model, X_test, Y_test, category_names):
 
 
 def save_model(model, model_filepath):
+    """
+    Summary line.
+    Export the model as a pickle file
+    
+    Parameters:
+    -model
+    -model_filepath
+    
+    Returns:
+    -pickle file
+    """
     #Export your model as a pickle file
     pickle.dump(model, open(model_filepath, 'wb'))
 
 
 def main():
+    """
+    Summary line.
+    Uses sys.argv[1:] to
+    -load_data
+    -train_test_split
+    -build_model
+    -fit model
+    -evaluate_model
+    -save_model
+   
+    Parameters:
+    sys.argv[1:]
+    
+    Returns:
+    -pickle file
+    """
+    
     if len(sys.argv) == 3:
         database_filepath, model_filepath = sys.argv[1:]
         print('Loading data...\n    DATABASE: {}'.format(database_filepath))
