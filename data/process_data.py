@@ -8,12 +8,20 @@ import re
 from sqlalchemy import create_engine
 
 def load_data(messages_filepath, categories_filepath):
-    '''
-    Load disaster_messages.csv into a dataframe called messages
-    Load disaster_categories.csv into a dataframe called categories
+    """ 
+    Summary line. 
+    -Load disaster_messages.csv into a dataframe called messages
+    -Load disaster_categories.csv into a dataframe called categories
+    -create df by merging messages and categories 
+  
+    Parameters: 
+    -messages_filepath
+    -categories_filepath
     
-    create df by merging messages and categories
-    '''
+    Returns: 
+    df
+    """
+    
     # load messages dataset
     messages = pd.read_csv(messages_filepath , encoding='latin-1')
     # load categories dataset
@@ -26,12 +34,20 @@ def load_data(messages_filepath, categories_filepath):
 
 
 def clean_data(df):
-    '''
+    """ 
+    Summary line. 
     Split categories into separate category columns.
     - Split the values in the categories column on the ; character so that each value becomes a separate column.
     - Use the first row of categories dataframe to create column names for the categories data.
     - Rename columns of categories with new column names
-    '''
+  
+    Parameters: 
+    -df
+    
+    Returns: 
+    -df
+    """
+    
     # create a dataframe of the individual category columns
     categories = df.categories.str.split(";", expand=True)
     
@@ -76,18 +92,42 @@ def clean_data(df):
 
 
 def save_data(df, database_filename):
-    '''
+    """ 
+    Summary line. 
     Save the clean dataset into an sqlite database
     - With pandas to_sql method combined with the SQLAlchemy library. 
     - We have imported SQLAlchemy's in the first part of this notebook to use it here.
     - create_engine
-    '''
+  
+    Parameters: 
+    -df
+    -database_filename
+    
+    Returns: 
+    -database_filename.db
+    """
+    
     engine = create_engine('sqlite:///{}'.format(database_filename))
         
     df.to_sql('df_clean', engine, index=False, if_exists='replace')
 
 
 def main():
+    """ 
+    Given the sys.argv[1:]
+    -load_data
+    -clean_data
+    -save_data
+    
+  
+    Parameters: 
+    -messages_filepath
+    -categories_filepath 
+    -database_filepath
+    
+    Returns: 
+    -database_filename.db
+    """
     if len(sys.argv) == 4:
 
         messages_filepath, categories_filepath, database_filepath = sys.argv[1:]
